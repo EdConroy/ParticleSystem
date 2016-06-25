@@ -4,15 +4,17 @@
 #include "ParticleEffect.h"
 #include "SphereEmitter.h"
 #include "CubeEmitter.h"
+#include "ConeEmitter.h"
 
 PivotCamera g_Camera;
 SphereEmitter g_ParticleEmitter;
 CubeEmitter g_CubeEmitter;
+int num_particles = 10000;
 
 #if _DEBUG
 ParticleEffect g_ParticleEffect(1000);
 #else
-ParticleEffect g_ParticleEffect(10000);
+ParticleEffect g_ParticleEffect(num_particles);
 #endif 
 
 int g_iWindowWidth = 1280;
@@ -245,7 +247,23 @@ void SpecialKeysGL( int c, int x, int y )
             Decrement(g_ParticleEmitter.MinAzimuth, fStep, 0.0f );
             Increment(g_ParticleEmitter.MaxAzimuth , fStep, 360.0f );
         }
+		break;
+	case GLUT_KEY_F1:
+	{
+		num_particles -= 100;
+		if (num_particles <= 0)
+			num_particles = 0;
+		g_ParticleEffect.Resize(num_particles);
+	}
         break;
+	case GLUT_KEY_F2:
+	{
+		num_particles += 100;
+		if (num_particles >= 10000)
+			num_particles = 10000;
+		g_ParticleEffect.Resize(num_particles);
+	}
+	break;
     };
 
     glutPostRedisplay();
