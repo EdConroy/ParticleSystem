@@ -18,23 +18,26 @@ SphereEmitter::SphereEmitter()
 
 void SphereEmitter::EmitParticle( Particle& particle )
 {
-    float inclination = glm::radians( RandRange( MinInclination, MaxInclination ) );
-    float azimuth = glm::radians( RandRange( MinAzimuth, MaxAzimuth ) );
+    float inclination = glm::radians(RandRange(MinInclination, MaxInclination));
+    float azimuth = glm::radians(RandRange(MinAzimuth, MaxAzimuth));
 
-    float radius = RandRange( MinimumRadius, MaximumRadius );
+    float radius = RandRange(MinimumRadius, MaximumRadius);
     float speed = RandRange( MinSpeed, MaxSpeed );
     float lifetime = RandRange( MinLifetime, MaxLifetime );
 
+	
     float sInclination = sinf( inclination );
-
+	
     float X = sInclination * cosf( azimuth );
-    float Y = sInclination * sinf( azimuth );
-    float Z = cosf( inclination );
+	//float X = 4 * (3.14 * (radius * radius));
+	float Y = sInclination * sinf(azimuth);
+	float Z = cosf(inclination);
 
     glm::vec3 vector( X, Y, Z );
 
     particle.m_Position = ( vector * radius ) + Origin;
     particle.m_Velocity = vector * speed;
+	particle.m_Velocity[1] += 50;
 
     particle.m_fLifeTime = lifetime;
     particle.m_fAge = 0;
