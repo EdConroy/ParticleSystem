@@ -60,10 +60,13 @@ void ParticleEffect::RandomizeParticle( Particle& particle )
 
     //particle.m_Position = unitVec * 1.0f;
     //particle.m_Velocity = unitVec * RandRange( 10, 20 );
+
 	particle.m_Position[0] = fibonacci(RandRange(0, 1));
 	particle.m_Velocity[0] = fibonacci(RandRange(1, 2));
 	particle.m_Velocity[1] = unitVec[1] * RandRange(1, 2);
 
+	glm::rotate(glm::radians(fibonacci(RandRange(5, 15))), particle.m_Position[0],
+		particle.m_Position[1], particle.m_Position[2]);
 }
 
 void ParticleEffect::RandomizeParticles()
