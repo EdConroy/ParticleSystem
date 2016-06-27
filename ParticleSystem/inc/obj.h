@@ -1,7 +1,4 @@
-#pragma once
-
-#ifndef __OBJ_H__
-#define __OBJ_H__
+#pragma once;
 /**
 * obj
 * @license The MIT License (MIT)
@@ -23,7 +20,6 @@
 *    SOFTWARE.
 */
 #include "model.h"
-#include "ParticleSystemPCH.h"
 
 /**
 * @purpse provide an interface to load and parse object files into the model data type
@@ -96,6 +92,3 @@ void obj_draw(
 	glm::vec4 color,
 	Sprite *texture
 	);
-
-
-#endif

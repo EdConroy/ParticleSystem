@@ -1,5 +1,4 @@
-#ifndef __GRAPHICS3D_H__
-#define __GRAPHICS3D_H__
+#pragma once;
 
 /**
 * simple_logger
@@ -23,6 +22,8 @@
 */
 #include <SDL.h>
 #include <GL/glew.h>
+#include <cstdlib>
+#include "ParticleSystemPCH.h"
 
 #define EPSILON   1e-6f
 
@@ -64,5 +65,3 @@ void graphics3d_frame_begin();
 void graphics3d_next_frame();
 
 void graphics3d_draw2d(int sw, int sh);
-
-#endif

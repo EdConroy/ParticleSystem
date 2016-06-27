@@ -1,7 +1,4 @@
-#pragma once
-
-#ifndef __MODEL_H__
-#define __MODEL_H__
+#pragma once;
 /**
 * model
 * @license The MIT License (MIT)
@@ -116,6 +113,3 @@ int model_allocate_attribute_buffer(Model *model, GLuint attributes);
 * @return -1 on error or 0 otherwise
 */
 int model_allocate_vertex_buffer(Model *model, GLuint vertices);
-
-
-#endif

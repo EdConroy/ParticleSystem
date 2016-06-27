@@ -1,8 +1,5 @@
 #include "graphics3d.h"
-//#include "simple_logger.h"
-//#include "shader.h"
 #include <GL/glu.h>
-#include <cstdlib>
 
 
 static SDL_GLContext __graphics3d_gl_context;
@@ -192,5 +189,3 @@ void graphics3d_draw2d(int sw, int sh)
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
-
-/*eol@eof*/

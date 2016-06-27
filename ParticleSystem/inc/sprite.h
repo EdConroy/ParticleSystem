@@ -1,9 +1,7 @@
-#pragma once
-
-#ifndef __SPRITE__
-#define __SPRITE__
+#pragma once;
 
 #include "graphics3d.h"
+#include <cstring>
 #include <SDL.h>
 
 #define MAXSPRITEFILENAME 512
@@ -54,7 +52,3 @@ void DrawSprite(Sprite *sprite, SDL_Surface *surface, int sx, int sy, int frame)
 * @brief clears all loaded sprites in system.  Called before program exit
 */
 void CloseSprites();
-
-
-
-#endif

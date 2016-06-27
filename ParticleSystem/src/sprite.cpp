@@ -1,7 +1,4 @@
 #include "sprite.h"
-#include <cstring>
-#include <cstdlib>
-//#include "simple_logger.h"
 
 #include <SDL_image.h>
 
@@ -123,8 +120,3 @@ void CloseSprites()
 		DeleteSprite(&SpriteList[i]);
 	}
 }
-
-
-
-
-/*eol@eof*/
