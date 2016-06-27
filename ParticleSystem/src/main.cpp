@@ -264,6 +264,16 @@ void SpecialKeysGL( int c, int x, int y )
 		g_ParticleEffect.Resize(num_particles);
 	}
 	break;
+	case GLUT_KEY_F3:
+	{
+		Increment(g_ParticleEmitter.MinSpeed, fStep, 1000.0f);
+		Increment(g_ParticleEmitter.MinSpeed, fStep, 10000.0f);
+	}
+	case GLUT_KEY_F4:
+	{
+		Decrement(g_ParticleEmitter.MinSpeed, fStep, 0.0f);
+		Decrement(g_ParticleEmitter.MaxSpeed, fStep, 10.0f);
+	}
     };
 
     glutPostRedisplay();

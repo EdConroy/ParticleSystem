@@ -45,7 +45,6 @@ bool ParticleEffect::LoadTexture( const std::string& fileName )
     {
         glDeleteTextures(1, &m_TextureID );
     }
-    //m_TextureID = SOIL_load_OGL_texture( fileName.c_str(), SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS );
 	m_TextureID = SOIL_load_OGL_single_cubemap(fileName.c_str(), "North", 3, 1, NULL);
 
     return ( m_TextureID != 0 );
